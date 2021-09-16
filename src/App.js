@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from "./Components/Navbar/Navbar";
+import React from 'react'
+import './App.css'
+import Banner from "./Components/Banner/Banner";
+import RowPoster from "./Components/RowPoster/RowPoster";
+import {originals,action,horror,comedy,romance} from './urls';
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <Banner/>
+      <RowPoster url={originals} title='Netflix Originals' />
+      <RowPoster url={action} title='Action' isSmall />
+      <RowPoster url={horror} title='Horror' isSmall />
+      <RowPoster url={comedy} title='Comedy' isSmall />
+      <RowPoster url={romance} title='Romance' isSmall />
+      
     </div>
   );
 }
